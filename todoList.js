@@ -1,6 +1,6 @@
 // We'll pre-populate this array with a couple objects just so it's not undefined if your internet connection isn't working properly.
 
-let arrayofTodos = [
+let arrayOfTodos = [
     {
     "userId": 14,
     "id": 1,
@@ -15,26 +15,27 @@ let arrayofTodos = [
   }]
 
   const fetchTodos = () => {
-    fetch('https://jsonplaceholder.typicode.com/todos?userId=todoUserID')
+    fetch('https://jsonplaceholder.typicode.com/todos')
     .then( (response) => response.json())
-    .then( (json) => arrayofTodos = json)
+    .then( (json) => arrayOfTodos = json)
   }
 
   const logTodos = () => {
-    console.log(arrayofTodos)
+    console.log(arrayOfTodos)
   }
 
   const populateTodos = () => {
 
 
-        for (i = 0; arrayofTodos.length; i++){
+        for (i = 0; arrayOfTodos.length; i++){
 
           let todoList = document.getElementById('todoList');  // find the <ol>
+          
           let todoTitle = "";
 
-          todoTitle = document.createTextNode(arrayofTodos[i].title);
+          todoTitle = document.createTextNode(arrayOfTodos[i].title);
 
-          todoItem = document.createElement ('li');
+          todoItem = document.createElement ('LI');
 
           todoItem.appendChild(todoTitle);
 
